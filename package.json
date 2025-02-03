@@ -1,9 +1,9 @@
 {
   "name": "app-rect-proyect",
   "private": true,
-  "homepage": "https://tenchipe23.github.io/",
   "version": "0.0.0",
     "type": "module",
+  "homepage": "https://tenchipe23.github.io/app-rect-proyect/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
