@@ -22,18 +22,18 @@ const About: React.FC = () => {
 
       {/* Use existing Hero component with top margin to prevent menu overlap */}
       <Hero
-        title="Your Trusted E-Commerce Partner"
-        description="Delivering Quality, Convenience, and Innovation to Your Doorstep"
-        subtitle="Empowering Your Shopping Experience"
-        primaryButtonText="Shop Now"
-        primaryButtonLink="/products"
+        title="Tu Tienda de Confianza"
+        description="Entregando Calidad, Comodidad y Innovación a tu Puerta"
+        subtitle="Empoderando tu Experiencia de Compra"
+        primaryButtonText="Comprar Ahora"
+        primaryButtonLink="/productos"
         overlayOpacity={0.6}
       />
 
       {/* Our Story Section */}
       <section className="container mx-auto py-20 px-4">
         <h2 className="text-3xl font-bold text-blue-600 text-center mb-12">
-          Our Journey
+          Nuestra Historia
         </h2>
         <div className="grid md:grid-cols-2 gap-8">
           {COMPANY_MILESTONES.map((milestone, index) => (
@@ -46,7 +46,7 @@ const About: React.FC = () => {
       <section className="bg-white py-20">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-blue-600 text-center mb-12">
-            Our Core Values
+            Nuestros Valores Fundamentales
           </h2>
           <div className="grid md:grid-cols-4 gap-6 px-4">
             {CORE_VALUES.map((value, index) => (
@@ -59,7 +59,7 @@ const About: React.FC = () => {
       {/* Team Section */}
       <section className="container mx-auto py-20">
         <h2 className="text-3xl font-bold text-blue-600 text-center mb-12">
-          Meet Our Leadership
+          Conoce a Nuestro Equipo
         </h2>
         <div className="grid md:grid-cols-2 gap-8 px-4">
           {TEAM_MEMBERS.map((member, index) => (
@@ -71,14 +71,14 @@ const About: React.FC = () => {
       {/* Minimal Variant */}
       <CallToAction
         variant="minimal"
-        title="Need Help?"
-        description="Our support team is ready to assist you"
-        buttonText="Contact Support"
+        title="¿Necesitas Ayuda?"
+        description="Nuestro equipo de soporte está listo para ayudarte"
+        buttonText="Contáctanos"
       />
 
       {/* Footer */}
       <Footer
-        companyName="My Company"
+        companyName="Mi Compañía"
         currentYear={new Date().getFullYear()}
         footerLinks={footerLinks}
       />

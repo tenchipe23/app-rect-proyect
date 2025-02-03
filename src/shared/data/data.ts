@@ -6,53 +6,53 @@ import { FaLinkedin, FaTwitter, FaShoppingCart, FaTruck, FaHeadset, FaRecycle, F
 export const CORE_VALUES: ValueCardProps[] = [
     {
       icon: FaShoppingCart,
-      title: 'Customer First',
-      description: 'Providing an exceptional shopping experience with personalized service and curated products.'
+      title: 'Cliente Primero',
+      description: 'Proporcionar una experiencia de compra excepcional con servicio personalizado y productos seleccionados.'
     },
     {
       icon: FaTruck,
-      title: 'Seamless Delivery',
-      description: 'Fast, reliable, and trackable shipping to ensure your products arrive safely and on time.'
+      title: 'Entrega Sin Problemas',
+      description: 'Envíos rápidos, confiables y rastreables para asegurarte de que tus productos lleguen a salvo y a tiempo.'
     },
     {
       icon: FaHeadset,
-      title: 'Support Excellence',
-      description: 'Dedicated customer support team ready to assist you at every step of your shopping journey.'
+      title: 'Experiencia de Soporte',
+      description: 'Equipo de soporte al cliente dedicado listo para ayudarte en cada paso de tu aventura de compras.'
     },
     {
       icon: FaRecycle,
-      title: 'Sustainable Practices',
-      description: 'Committed to eco-friendly packaging and supporting sustainable product lines.'
+      title: 'Prácticas Sustentables',
+      description: 'Comprometidos con envases ecológicos y líneas de productos sostenibles.'
     }
   ];
 export const COMPANY_MILESTONES: MilestoneCardProps[] = [
     {
       year: 2015,
-      title: 'Our Humble Beginnings',
-      description: 'Started as a small online store with a passion for quality products and customer satisfaction.'
+      title: 'Nuestros Humildes Comienzos',
+      description: 'Comenzamos como una pequeña tienda en línea con una pasión por productos de calidad y satisfacción del cliente.'
     },
     {
       year: 2018,
-      title: 'Expanding Horizons',
-      description: 'Launched international shipping and expanded our product range to serve a global audience.'
+      title: 'Expansión Global',
+      description: 'Lanzamos envíos internacionales y ampliamos nuestra gama de productos para servir a una audiencia global.'
     },
     {
       year: 2021,
-      title: 'Digital Innovation',
-      description: 'Implemented AI-powered recommendations and personalized shopping experiences.'
+      title: 'Innovación Digital',
+      description: 'Implementamos recomendaciones impulsadas por inteligencia artificial y experiencias de compras personalizadas.'
     },
     {
       year: 2023,
-      title: 'Sustainability Commitment',
-      description: 'Initiated our green initiative with eco-friendly packaging and carbon-neutral shipping.'
+      title: 'Compromiso con la Sostenibilidad',
+      description: 'Iniciamos nuestra iniciativa verde con envases ecológicos y envíos con neutrales en carbono.'
     }
   ];
   
 export const TEAM_MEMBERS: TeamMemberCardProps[] = [
     {
-      name: 'Elena Rodriguez',
-      role: 'Founder & CEO',
-      image: '/assets/images/team/elena.jpg',
+      name: 'Jose Manuel Tenchipe del Valle',
+      role: 'Fundador y CEO',
+      image: '/assets/images/team/Fundador.jpg',
       socialLinks: [
         { icon: FaLinkedin, url: 'https://linkedin.com/in/elenarodriguez' },
         { icon: FaTwitter, url: 'https://twitter.com/elenarodriguez' }
@@ -60,7 +60,7 @@ export const TEAM_MEMBERS: TeamMemberCardProps[] = [
     },
     {
       name: 'Miguel Santos',
-      role: 'Chief Technology Officer',
+      role: 'Director de Tecnología',
       image: '/assets/images/team/miguel.jpg',
       socialLinks: [
         { icon: FaLinkedin, url: 'https://linkedin.com/in/miguelsantos' },

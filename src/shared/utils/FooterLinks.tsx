@@ -1,29 +1,29 @@
 export const footerLinks = [
     {
-      title: "Quick Links",
+      title: "Enlaces rápidos",
       links: [
-        { name: "Home", url: "/" },
-        { name: "About", url: "/about" },
-        { name: "Products", url: "/products" },
-        { name: "Contact", url: "/contact" },
+        { name: "Inicio", url: "/" },
+        { name: "Acerca de", url: "/about" },
+        { name: "Productos", url: "/products" },
+        { name: "Contacto", url: "/contact" },
       ],
     },
     {
-      title: "Company",
+      title: "Compañía",
       links: [
-        { name: "Our Story", url: "/about#story" },
-        { name: "Core Values", url: "/about#values" },
-        { name: "Team", url: "/about#team" },
-        { name: "Careers", url: "/careers" },
+        { name: "Nuestra historia", url: "/about#story" },
+        { name: "Valores fundamentales", url: "/about#values" },
+        { name: "Equipo", url: "/about#team" },
+        { name: "Trabajos", url: "/careers" },
       ],
     },
     {
-      title: "Support",
+      title: "Soporte",
       links: [
-        { name: "FAQ", url: "/faq" },
-        { name: "Customer Service", url: "/support" },
-        { name: "Shipping", url: "/shipping" },
-        { name: "Returns", url: "/returns" },
+        { name: "Preguntas frecuentes", url: "/faq" },
+        { name: "Servicio al cliente", url: "/support" },
+        { name: "Envío", url: "/shipping" },
+        { name: "Devoluciones", url: "/returns" },
       ],
     },
   ];

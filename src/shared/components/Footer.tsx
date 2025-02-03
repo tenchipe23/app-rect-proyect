@@ -26,7 +26,7 @@ function Footer({ companyName, currentYear, footerLinks }: FooterProps) {
           <div className="md:col-span-1">
             <h2 className="text-2xl font-bold mb-4">{companyName}</h2>
             <p className="text-gray-400 mb-4">
-              Delivering quality, convenience, and innovation to your doorstep.
+              Entregando calidad, conveniencia e innovación a tu puerta.
             </p>
 
             {/* Social Media Links */}
@@ -69,19 +69,19 @@ function Footer({ companyName, currentYear, footerLinks }: FooterProps) {
           {/* Newsletter Signup */}
           <div className="md:col-span-1">
             <h3 className="text-xl font-semibold mb-4 border-b border-gray-700 pb-2">
-              Stay Updated
+              Mantén la información actualizada
             </h3>
             <form className="flex flex-col space-y-2">
               <input
                 type="email"
-                placeholder="Enter your email"
+                placeholder="Introduce tu correo electrónico"
                 className="px-3 py-2 bg-gray-800 text-white rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <button
                 type="submit"
                 className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition duration-300"
               >
-                Subscribe
+                Suscribirme
               </button>
             </form>
           </div>
@@ -90,20 +90,20 @@ function Footer({ companyName, currentYear, footerLinks }: FooterProps) {
         {/* Copyright and Legal */}
         <div className="mt-8 pt-8 border-t border-gray-700 text-center">
           <p className="text-gray-400">
-            &copy; {currentYear} {companyName}. All rights reserved.
+            &copy; {currentYear} {companyName}. Todos los derechos reservados.
           </p>
           <div className="mt-2 space-x-4">
             <Link
-              to="/privacy"
+              to="/politica-de-privacidad"
               className="text-gray-400 hover:text-white hover:underline text-sm"
             >
-              Privacy Policy
+              Política de Privacidad
             </Link>
             <Link
-              to="/terms"
+              to="/terminos-y-condiciones"
               className="text-gray-400 hover:text-white hover:underline text-sm"
             >
-              Terms of Service
+              Términos y Condiciones
             </Link>
           </div>
         </div>

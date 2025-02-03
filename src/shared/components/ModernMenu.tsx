@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   FaHome,
@@ -11,27 +11,46 @@ import {
   FaShoppingCart,
   FaSearch,
   FaHeart,
+  FaSignOutAlt,
 } from "react-icons/fa";
+import { authService } from "../../core/services/AuthService";
 
 interface MenuLink {
   label: string;
   href: string;
   icon: React.ReactNode;
+  onClick?: () => void;
 }
 
 const MENU_LINKS: MenuLink[] = [
-  { label: "Home", href: "/", icon: <FaHome /> },
-  { label: "About", href: "/about", icon: <FaInfoCircle /> },
-  { label: "Products", href: "/products", icon: <FaBox /> },
+  { label: "Inicio", href: "/", icon: <FaHome /> },
+  { label: "Acerca de", href: "/about", icon: <FaInfoCircle /> },
+  { label: "Productos", href: "/products", icon: <FaBox /> },
   { label: "Favoritos", href: "/favorites", icon: <FaHeart /> },
-  { label: "Contact", href: "/contact", icon: <FaEnvelope /> },
-  { label: "Profile", href: "/profile", icon: <FaUserCircle /> },
+  { label: "Contacto", href: "/contact", icon: <FaEnvelope /> },
+  { label: "Perfil", href: "/profile", icon: <FaUserCircle /> },
 ];
 
 export const ModernMenu: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    authService.logout();
+    navigate("/login", { replace: true });
+  };
+
+  const MENU_LINKS_WITH_LOGOUT: MenuLink[] = [
+    ...MENU_LINKS,
+    {
+      label: "Cerrar Sesión",
+      href: "/login",
+      icon: <FaSignOutAlt />,
+      onClick: handleLogout,
+    },
+  ];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -56,7 +75,7 @@ export const ModernMenu: React.FC = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6 items-center">
-          {MENU_LINKS.map((link) => (
+          {MENU_LINKS_WITH_LOGOUT.map((link) => (
             <Link
               key={link.href}
               to={link.href}
@@ -68,6 +87,7 @@ export const ModernMenu: React.FC = () => {
                     : "text-gray-700 hover:bg-blue-100 hover:text-blue-600"
                 }
               `}
+              onClick={link.onClick}
             >
               {link.icon}
               <span>{link.label}</span>
@@ -142,7 +162,7 @@ export const ModernMenu: React.FC = () => {
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="flex flex-col space-y-4">
-                  {MENU_LINKS.map((link) => (
+                  {MENU_LINKS_WITH_LOGOUT.map((link) => (
                     <Link
                       key={link.href}
                       to={link.href}
@@ -154,7 +174,10 @@ export const ModernMenu: React.FC = () => {
                             : "text-gray-700 hover:bg-blue-100 hover:text-blue-600"
                         }
                       `}
-                      onClick={toggleMenu}
+                      onClick={() => {
+                        link.onClick?.();
+                        toggleMenu();
+                      }}
                     >
                       {link.icon}
                       <span>{link.label}</span>

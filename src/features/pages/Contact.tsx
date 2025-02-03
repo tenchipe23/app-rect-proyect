@@ -49,7 +49,12 @@ const Contact: React.FC = () => {
       await new Promise((resolve) => setTimeout(resolve, 1500));
 
       console.log("Datos del formulario:", data);
-      reset();
+      reset({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
       setSubmitSuccess(true);
       setTimeout(() => setSubmitSuccess(false), 3000);
     } catch (error) {
@@ -93,7 +98,6 @@ const Contact: React.FC = () => {
             <InputField
               name="name"
               label="Nombre Completo"
-              control={control}
               placeholder="Tu Nombre"
               error={errors.name?.message}
             />
@@ -102,7 +106,6 @@ const Contact: React.FC = () => {
               name="email"
               label="Correo Electrónico"
               type="email"
-              control={control}
               placeholder="tu.correo@ejemplo.com"
               error={errors.email?.message}
             />
@@ -111,7 +114,6 @@ const Contact: React.FC = () => {
               name="phone"
               label="Número de Teléfono (Opcional)"
               type="tel"
-              control={control}
               placeholder="(555) 123-4567"
               error={errors.phone?.message}
             />
