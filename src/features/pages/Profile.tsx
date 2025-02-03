@@ -11,7 +11,6 @@ import {
   FaSave 
 } from 'react-icons/fa';
 
-// Define a comprehensive user profile interface
 interface UserProfileData {
   firstName: string;
   lastName: string;
@@ -23,7 +22,6 @@ interface UserProfileData {
 }
 
 const Profile: React.FC = () => {
-  // Initial user profile state
   const [profile, setProfile] = useState<UserProfileData>({
     firstName: 'José',
     lastName: 'Manuel',
@@ -34,13 +32,10 @@ const Profile: React.FC = () => {
     avatar: '/assets/default-avatar.png'
   });
 
-  // Edit mode state
   const [isEditing, setIsEditing] = useState(false);
 
-  // Temporary state for editing
   const [editProfile, setEditProfile] = useState<UserProfileData>({...profile});
 
-  // Handle input changes during editing
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setEditProfile(prev => ({
@@ -48,14 +43,11 @@ const Profile: React.FC = () => {
       [name]: value
     }));
   };
-
-  // Save profile changes
   const saveProfile = () => {
     setProfile({...editProfile});
     setIsEditing(false);
   };
 
-  // Profile sections to display
   const profileSections = [
     {
       icon: <FaUser className="text-blue-500" />,

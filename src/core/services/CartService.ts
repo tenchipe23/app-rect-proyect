@@ -26,7 +26,6 @@ interface CartStore {
   getTotalPrice: () => number;
 }
 
-// Explicitly define the type for persisted state
 type PersistedCartState = {
   items?: CartItem[];
   totalItems?: number;
@@ -146,9 +145,7 @@ export const useCartStore = create<CartStore>()(
       name: 'cart-storage',
       storage: createJSONStorage(() => localStorage),
       
-      // Explicitly typed migrate function with more comprehensive migration
       migrate: (persistedState: unknown): CartStore => {
-        // Provide a completely safe default state
         const createDefaultState = (): CartStore => ({
           items: [],
           totalItems: 0,
@@ -162,32 +159,24 @@ export const useCartStore = create<CartStore>()(
           getTotalPrice: () => 0
         });
 
-        // Validate input
         if (!persistedState || typeof persistedState !== 'object') {
           console.warn('Invalid persisted state, using default');
           return createDefaultState();
         }
 
-        // Type assertion with comprehensive type checking
         const state = persistedState as PersistedCartState & CartStore;
 
-        // Migration logic
         try {
-          // Comprehensive migration strategy
           const migratedState = createDefaultState();
 
-          // Check for nested state first
           const sourceState = state.state || state;
 
-          // Validate and migrate items
           if (Array.isArray(sourceState.items)) {
             migratedState.items = sourceState.items.map(item => ({
               ...item,
               quantity: item.quantity || 1
             }));
           }
-
-          // Migrate totals with fallback
           migratedState.totalItems = sourceState.totalItems || 
             migratedState.items.reduce((total, item) => total + (item.quantity || 1), 0);
           
@@ -203,18 +192,13 @@ export const useCartStore = create<CartStore>()(
           return createDefaultState();
         }
       },
-      
-      // Explicitly set version
       version: 2,
       
-      // Add comprehensive error handling
       onRehydrateStorage: (state) => {
         console.log('Rehydration started', state);
         return (error) => {
           if (error) {
             console.error('Rehydration error', error);
-            // Optionally, you could clear the storage here
-            // localStorage.removeItem('cart-storage');
           }
         };
       }

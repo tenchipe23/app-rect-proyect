@@ -18,8 +18,6 @@ export const useAlertStore = create<AlertState>((set) => ({
     };
 
     set({ alert: finalConfig });
-
-    // Auto-clear alert after duration
     if (finalConfig.duration) {
       setTimeout(() => {
         set({ alert: null });

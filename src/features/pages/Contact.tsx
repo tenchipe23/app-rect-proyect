@@ -4,7 +4,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { motion } from "framer-motion";
 
-// Shared Components
 import { Hero } from "../../shared/components/Hero";
 import { InputField } from "../../shared/components/InputField";
 import { FormButton } from "../../shared/components/FormButton";
@@ -12,10 +11,8 @@ import ContactInfoCard from "../../shared/components/ContactInfoCard";
 import { ModernMenu } from "../../shared/components/ModernMenu";
 import Footer from "../../shared/components/Footer";
 
-// Utilities
 import { footerLinks } from "../../shared/utils/FooterLinks";
 
-// Validation Schema
 const contactSchema = z.object({
   name: z
     .string()

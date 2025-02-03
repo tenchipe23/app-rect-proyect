@@ -11,7 +11,6 @@ import {
   FaLanguage,
 } from "react-icons/fa";
 
-// Define interfaces for configuration sections
 interface UserProfile {
   name: string;
   email: string;
@@ -25,7 +24,6 @@ interface AppSettings {
 }
 
 const Configuration: React.FC = () => {
-  // State for user profile and app settings
   const [userProfile, setUserProfile] = useState<UserProfile>({
     name: "Usuario",
     email: "usuario@ejemplo.com",
@@ -38,12 +36,10 @@ const Configuration: React.FC = () => {
     notifications: true,
   });
 
-  // Add a function to update user profile
   const handleProfileUpdate = (updatedProfile: Partial<UserProfile>) => {
     setUserProfile((prevProfile) => ({ ...prevProfile, ...updatedProfile }));
   };
 
-  // Configuration sections
   const configSections = [
     {
       icon: <FaUser className="text-blue-500" />,
@@ -165,9 +161,7 @@ const Configuration: React.FC = () => {
     },
   ];
 
-  // Effect to save settings (you would typically integrate with backend)
   useEffect(() => {
-    // Example of saving settings (mock implementation)
     console.log("App settings updated:", appSettings);
   }, [appSettings]);
 

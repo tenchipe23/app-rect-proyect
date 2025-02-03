@@ -13,7 +13,6 @@ const ProductDetails: React.FC = () => {
   const { addToCart } = useCartStore();
   const [quantity, setQuantity] = useState(1);
 
-  // Find the product by ID (replace with actual data fetching logic)
   const product = DEFAULT_PRODUCTS.find(p => p.id === Number(productId));
 
   if (!product) {

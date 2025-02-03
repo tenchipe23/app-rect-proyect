@@ -103,9 +103,7 @@ const Cart: React.FC = () => {
   const totalWithShipping = totalPrice + shippingCost;
 
   const handleCheckout = () => {
-    // Implement checkout logic
     setIsCheckingOut(true);
-    // You can add more complex checkout process here
   };
 
   if (items.length === 0) {

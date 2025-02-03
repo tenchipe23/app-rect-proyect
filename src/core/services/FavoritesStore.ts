@@ -15,7 +15,6 @@ export const useFavoritesStore = create<FavoritesStore>()(
       favorites: [],
       addToFavorites: (product) => {
         set((state) => {
-          // Check if product is already in favorites
           const isAlreadyFavorite = state.favorites.some(p => p.id === product.id);
           
           if (isAlreadyFavorite) {

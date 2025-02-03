@@ -1,7 +1,6 @@
 import React from "react";
 import { FaTruck, FaCreditCard } from "react-icons/fa";
 
-// Shared Components
 import { Hero } from "../../shared/components/Hero";
 import { SearchBar } from "../../shared/components/SearchBar";
 import { ServiceHighlight } from "../../shared/components/ServiceHighlight";
@@ -11,7 +10,6 @@ import SpecialOffers from "../../shared/components/SpecialOffers";
 import { ModernMenu } from "../../shared/components/ModernMenu";
 import Footer from "../../shared/components/Footer";
 
-// Utilities
 import { footerLinks } from "../../shared/utils/FooterLinks";
 
 const Home: React.FC = () => {

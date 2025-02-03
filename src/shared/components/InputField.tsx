@@ -22,7 +22,7 @@ interface InputFieldProps<TFieldValues extends FieldValues> {
 
 export const InputField = React.forwardRef<
   HTMLInputElement,
-  InputFieldProps<any>
+  InputFieldProps<FieldValues>
 >(
   (
     {
@@ -39,7 +39,6 @@ export const InputField = React.forwardRef<
     },
     ref
   ) => {
-    // If control is provided, use Controller (for react-hook-form controlled inputs)
     if (control) {
       return (
         <div className="mb-4">
@@ -75,8 +74,6 @@ export const InputField = React.forwardRef<
         </div>
       );
     }
-
-    // If register is provided (from react-hook-form's register method)
     if (register) {
       return (
         <div className="mb-4">
