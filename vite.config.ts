@@ -5,5 +5,5 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "https://tenchipe23.github.io/app-rect-proyect",
+  base: "/app-rect-proyect/",
 })
